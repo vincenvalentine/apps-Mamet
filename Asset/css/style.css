@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "GothamRounded-Bold";
+  src: url("fonts/GothamRounded-Bold.eot");
+  src: url("fonts/GothamRounded-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Bold.woff2") format("woff2"), url("fonts/GothamRounded-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Light";
+  src: url("fonts/GothamRounded-Light.eot");
+  src: url("fonts/GothamRounded-Light.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Light.woff2") format("woff2"), url("fonts/GothamRounded-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Book";
+  src: url("fonts/GothamRounded-Book.eot");
+  src: url("fonts/GothamRounded-Book.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Book.woff2") format("woff2"), url("fonts/GothamRounded-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Medium";
+  src: url("fonts/GothamRounded-Medium.eot");
+  src: url("fonts/GothamRounded-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Medium.woff2") format("woff2"), url("fonts/GothamRounded-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GothamRounded-Medium";
+}
+
+img {
+  max-width: 100%;
+}
+
+.main .main-container .background-home {
+  background-color: #723f96;
+  background-image: url(../images/bg-wave.png), url(../images/bg-icon.png);
+  padding: 10rem;
+  background-size: 100%, 40%;
+  background-repeat: no-repeat;
+  background-position: bottom center, 0% 20%;
+  margin-bottom: -70%;
+}
+.main .header-content {
+  padding: 1.5rem;
+}
+.main .header-content .text-content {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 10px;
+}
+.main .header-content .text-content .title h1 {
+  font-family: "GothamRounded-Book";
+}
+.main .header-content .text-content .subtitle {
+  display: flex;
+}
+.main .header-content .text-content .subtitle h5 {
+  font-family: "GothamRounded-Light";
+}
+.main .header-content .text-content .subtitle .date-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 0.5rem;
+}
+.main .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+.main .container .box-content {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 48%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.main .container .box-content p {
+  font-family: "GothamRounded-Light";
+}
+.main .container .box-content .image-content {
+  display: flex;
+  justify-content: space-between;
+}
+.main .container .box-content .image-content img {
+  max-width: 2.5rem;
+  margin-bottom: 3rem;
+  margin-right: 4rem;
+}
+.main .container .box-content .round {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 100%;
+}
+.main .buttonPlus {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: #723f96;
+  border-radius: 100%;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.main .buttonPlus span {
+  color: white;
+  font-size: 4rem;
+}
+
+/*# sourceMappingURL=style.css.map */

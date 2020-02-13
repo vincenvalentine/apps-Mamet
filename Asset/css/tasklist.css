@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "GothamRounded-Bold";
+  src: url("fonts/GothamRounded-Bold.eot");
+  src: url("fonts/GothamRounded-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Bold.woff2") format("woff2"), url("fonts/GothamRounded-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Light";
+  src: url("fonts/GothamRounded-Light.eot");
+  src: url("fonts/GothamRounded-Light.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Light.woff2") format("woff2"), url("fonts/GothamRounded-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Book";
+  src: url("fonts/GothamRounded-Book.eot");
+  src: url("fonts/GothamRounded-Book.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Book.woff2") format("woff2"), url("fonts/GothamRounded-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Medium";
+  src: url("fonts/GothamRounded-Medium.eot");
+  src: url("fonts/GothamRounded-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Medium.woff2") format("woff2"), url("fonts/GothamRounded-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GothamRounded-Medium";
+}
+
+.navigation {
+  padding: 1.5rem;
+}
+.navigation img {
+  width: 2rem;
+}
+
+.container-header .header {
+  padding: 1.5rem;
+  margin-top: -1.5rem;
+}
+.container-header .header .background .icon img {
+  width: 3rem;
+}
+.container-header .header .background .icon h2 {
+  font-family: "GothamRounded-Book";
+  color: #323539;
+}
+.container-header .header .background .icon h5 {
+  font-family: "GothamRounded-Light";
+  color: #87888a;
+}
+
+.container-boxList .boxList {
+  padding: 0.5rem 1.5rem;
+}
+.container-boxList .boxList .boxListContent {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5%;
+}
+.container-boxList .boxList .boxListContent .content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+.container-boxList .boxList .boxListContent .content h5 {
+  font-family: "GothamRounded-Book";
+  color: #323539;
+  width: 70%;
+}
+.container-boxList .boxList .boxListContent .content .closeBtn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #723f96;
+  border-radius: 100%;
+}
+.container-boxList .boxList .boxListContent .content .closeBtn span {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.doneList {
+  padding: 1.5rem;
+}
+.doneList .title {
+  padding-bottom: 1rem;
+}
+.doneList .title h5 {
+  font-family: "GothamRounded-Light";
+  color: #87888a;
+}
+.doneList .doneListContent .contentDoneList {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5%;
+  background-color: rgba(199, 194, 194, 0.1);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.doneList .doneListContent .contentDoneList h5 {
+  font-family: "GothamRounded-Book";
+  text-decoration: line-through;
+}
+.doneList .doneListContent .contentDoneList .closeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #723f96;
+  border-radius: 100%;
+}
+.doneList .doneListContent .contentDoneList .closeBtn span {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=tasklist.css.map */

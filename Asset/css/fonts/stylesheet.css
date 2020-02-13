@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'GothamRounded-Bold';
+    src: url('GothamRounded-Bold.eot');
+    src: url('GothamRounded-Bold.eot?#iefix') format('embedded-opentype'),
+        url('GothamRounded-Bold.woff2') format('woff2'),
+        url('GothamRounded-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRounded-Light';
+    src: url('GothamRounded-Light.eot');
+    src: url('GothamRounded-Light.eot?#iefix') format('embedded-opentype'),
+        url('GothamRounded-Light.woff2') format('woff2'),
+        url('GothamRounded-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRounded-Book';
+    src: url('GothamRounded-Book.eot');
+    src: url('GothamRounded-Book.eot?#iefix') format('embedded-opentype'),
+        url('GothamRounded-Book.woff2') format('woff2'),
+        url('GothamRounded-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRounded-Medium';
+    src: url('GothamRounded-Medium.eot');
+    src: url('GothamRounded-Medium.eot?#iefix') format('embedded-opentype'),
+        url('GothamRounded-Medium.woff2') format('woff2'),
+        url('GothamRounded-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

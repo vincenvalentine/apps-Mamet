@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "GothamRounded-Bold";
+  src: url("fonts/GothamRounded-Bold.eot");
+  src: url("fonts/GothamRounded-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Bold.woff2") format("woff2"), url("fonts/GothamRounded-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Light";
+  src: url("fonts/GothamRounded-Light.eot");
+  src: url("fonts/GothamRounded-Light.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Light.woff2") format("woff2"), url("fonts/GothamRounded-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Book";
+  src: url("fonts/GothamRounded-Book.eot");
+  src: url("fonts/GothamRounded-Book.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Book.woff2") format("woff2"), url("fonts/GothamRounded-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GothamRounded-Medium";
+  src: url("fonts/GothamRounded-Medium.eot");
+  src: url("fonts/GothamRounded-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/GothamRounded-Medium.woff2") format("woff2"), url("fonts/GothamRounded-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GothamRounded-Medium";
+}
+
+nav {
+  padding: 1.5rem;
+}
+nav img {
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+header {
+  padding: 1.5rem;
+}
+header h1 {
+  font-family: "GothamRounded-Book";
+  color: #323539;
+}
+header h5 {
+  font-family: "GothamRounded-Light";
+  color: gray;
+}
+
+.container-description {
+  padding: 1.5rem;
+}
+.container-description .description {
+  border-radius: 1rem;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+.container-description .description .content {
+  padding: 1.5rem;
+}
+.container-description .description .content .title-description h5 {
+  color: grey;
+  justify-content: center;
+  font-family: "GothamRounded-Light";
+  margin-bottom: 2.5rem;
+}
+.container-description .description .content .line input {
+  border: none;
+}
+.container-description .description .content .line .form-input {
+  width: 100%;
+  border-bottom: 2px solid #723f96;
+  font-family: "GothamRounded-Bold";
+  font-size: 1.5rem;
+}
+
+.container-category {
+  padding: 1.5rem;
+  margin-top: -1.5rem;
+}
+.container-category .category {
+  border-radius: 1rem;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+.container-category .category .wrap {
+  padding: 1.5rem;
+}
+.container-category .category .wrap .title-category h4 {
+  color: grey;
+  justify-content: center;
+  font-family: "GothamRounded-Light";
+  margin-bottom: 2.5rem;
+}
+.container-category .category .wrap .obj-category {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.container-category .category .wrap .obj-category img {
+  max-width: 100%;
+}
+.container-category .category .wrap .obj-category .img-content {
+  margin: 0 0.8rem 0 1.5rem;
+  width: 1rem;
+}
+.container-category .category .wrap .obj-category span {
+  padding-left: 0.5rem;
+  font-family: "GothamRounded-Medium";
+  color: #323539;
+}
+
+.container-button {
+  padding: 1.5rem;
+}
+.container-button .button {
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #723f96;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.container-button .button h4 {
+  color: white;
+}
+
+/*# sourceMappingURL=create.css.map */

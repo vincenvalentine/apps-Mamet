@@ -1,0 +1,118 @@
+@import "fonts";
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'GothamRounded-Medium';
+}
+
+
+$color_ungu : #723f96;
+
+.navigation{
+    padding: 1.5rem;
+    img{
+        width: 2rem;
+    }
+}
+
+.container-header {
+    .header{
+        padding: 1.5rem;
+        margin-top: -1.5rem;
+        .background{
+            .icon{
+                img{
+                    width: 3rem;
+                }
+                h2{
+                    font-family: 'GothamRounded-Book';
+                    color: #323539;
+                }
+                h5{
+                    font-family: 'GothamRounded-Light';
+                    color: #87888a;
+                }
+            }
+        }
+    }
+}
+    
+    .container-boxList{
+        .boxList{
+            padding: 0.5rem 1.5rem;
+            .boxListContent{
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+                border-radius: 5%;
+                .content{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 1rem;
+                    h5{
+                        font-family: 'GothamRounded-Book';
+                        color: #323539;
+                        width: 70%;
+                    }
+                    .closeBtn{
+                        cursor: pointer;
+                        display: flex;
+                        justify-content: center;
+                        align-items: stretch;
+                        align-content: stretch;
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        background-color: $color_ungu;
+                        border-radius: 100%;
+                        span{
+                            color: white;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+.doneList{
+    padding: 1.5rem;
+    .title{
+        padding-bottom: 1rem;
+        h5{
+            font-family: 'GothamRounded-Light';
+            color: #87888a; 
+        }
+    }
+    .doneListContent{
+        .contentDoneList{
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            border-radius: 5%;
+            background-color: rgba(199, 194, 194, 0.1);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            h5{
+                font-family: 'GothamRounded-Book';
+                text-decoration: line-through;
+            }
+            .closeBtn{
+                display: flex;
+                justify-content: center;
+                align-items: stretch;
+                align-content: stretch;
+                height: 1.5rem;
+                width: 1.5rem;
+                background-color: $color_ungu;
+                border-radius: 100%;
+                span{
+                    color: white;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
