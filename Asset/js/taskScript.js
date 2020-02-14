@@ -53,23 +53,25 @@ function displayTaskList() {
     let parsetoDoList = JSON.parse(arraytoDoList);
     let parseCategoryList = JSON.parse(arrayCategoryList);
 
+    let containeBoxLists = document.getElementsByClassName('boxList');
+
 
     console.log(parsetoDoList);
     console.log(parseCategoryList);
 
     let idTask = document.getElementById('container-Box');
-    let containeBoxLists = document.getElementsByClassName('boxList');
+    // let containeBoxLists = document.getElementsByClassName('boxList');
     let elemetTaskList = [];
 
     for (let i = 0; i < parseCategoryList.length; i++) {
         for (let j = 0; j < parsetoDoList.length; j++) {
 
-            if ((parseCategoryList[i].isActive == true) && (parseCategoryList[i].categoryId == parsetoDoList[j].categoryId)) {
+            if ((parseCategoryList[i].isActive == true) && (parseCategoryList[i].categoryId == parsetoDoList[j].categoryId)&& (parsetoDoList[j].isDone == false)) {
                 elemetTaskList.push(`
                         <div class="boxList" data-id='${parsetoDoList[j].id}'>
                             <div class="boxListContent">
                                 <div class="content" >
-                                    <h5>${parsetoDoList[j].description}</h5>
+                                     <h5>${parsetoDoList[j].description}</h5>
                                     <div class="closeBtn" data-id='${parsetoDoList[j].id}'>
                                         <span>x</span>
                                     </div>
@@ -77,18 +79,19 @@ function displayTaskList() {
                             </div>
                         </div>
                     `)
-            } else if (parsetoDoList[j].isDone = true) {
-
-
+            } else {
+        
+              }
+              
             }
         }
-    }
-
-
+    
 
 
     let join = elemetTaskList.join('');
     idTask.innerHTML = join;
+
+    // console.log(join);
 }
 
 
@@ -99,7 +102,11 @@ function addTaskListEventListener() {
     let containeBoxLists = document.getElementsByClassName('boxList');
     let closeButtons = document.getElementsByClassName('closeBtn');
 
+    let containerIsDoneLists = document.getElementsByClassName('contentDoneList');
+    let closeButtonsIsDone = document.getElementsByClassName('closeButtonsIsDone');
 
+    console.log(closeButtons.length);
+    
     for (let i = 0; i < containeBoxLists.length; i++) {
         containeBoxLists[i].addEventListener('click', function () {
             let idbox = this.dataset.id;
@@ -108,12 +115,12 @@ function addTaskListEventListener() {
                     parsetoDoList[y].isDone = true;
                     window.localStorage.setItem('toDoList', JSON.stringify(parsetoDoList));
                     containeBoxLists[i].remove();
-                    window.location.reload();
+                    // window.location.reload();
                 } else {
                     console.log('false');
                 }
             }
-            console.log(parsetoDoList);
+            // console.log(parsetoDoList);
 
             displayisDoneList();
 
@@ -121,13 +128,8 @@ function addTaskListEventListener() {
 
     }
 
-    // for (let m = 0; m < parsetoDoList.length; m++){
-    //     console.log(containeBoxLists[m].dataset.id);
-    //     if (parsetoDoList[m].isDone == true) {
-    //         containeBoxLists[m].style.display = 'none';
-    //     }
-    // }
-
+    console.log(closeButtons);
+    
 
     for (let j = 0; j < closeButtons.length; j++) {
         closeButtons[j].addEventListener('click', function (e) {
@@ -137,7 +139,28 @@ function addTaskListEventListener() {
                 if (ID == parsetoDoList[k].id) {
                     parsetoDoList.splice(k,1);  
                     window.localStorage.setItem('toDoList', JSON.stringify(parsetoDoList));   
-                    window.location.reload();               
+                    displayTaskList();
+                } else {
+                    
+                }
+
+            }
+            e.stopPropagation();
+        })
+    }
+    
+
+    for (let c = 0; c < containerIsDoneLists.length; c++) {
+        console.log(c);
+        
+        containerIsDoneLists[c].addEventListener('click', function (e) {
+            console.log(e.target);
+            let ID = this.dataset.id;
+            for(let k = 0; k < parsetoDoList.length; k++){
+                if (ID == parsetoDoList[k].id) {
+                    parsetoDoList.splice(k,1);  
+                    window.localStorage.setItem('toDoList', JSON.stringify(parsetoDoList));   
+                    displayTaskList();           
                 } else {
                     
                 }
@@ -167,42 +190,22 @@ function displayisDoneList() {
 
     console.log(idDone);
 
-    // for (let i = 0; i < parsetoDoList.length; i++) {
-    //         if (parsetoDoList[i].isDone == true) {
-    //             elementDoneList.push(`
-    //             <div class="contentDoneList">
-    //                 <h5>${parsetoDoList[i].description}</h5>
-    //                 <div class="closeBtn">
-    //                     <span>x</span>
-    //                 </div>
-    //             </div>
-    //     `)
-    //         } else {
-    //             console.log('false');
-    //         }
-    // }
-
-
 
     for (let y = 0; y < parsetoDoList.length; y++) {
         for (let j = 0; j < parseCategoryList.length; j++) {
-            // console.log('+++++++++++++');
-            // console.log(parsetoDoList[y].isDone);
-            // console.log(parseCategoryList[j].categoryId);
-            // console.log(parsetoDoList[y].categoryId);
+      
 
             if ((parsetoDoList[y].isDone == true) && (parseCategoryList[j].categoryId == parsetoDoList[y].categoryId)
                 && (parseCategoryList[j].isActive == true)) {
                 elementDoneList.push(`
                             <div class="contentDoneList">
                                 <h5>${parsetoDoList[y].description}</h5>
-                                <div class="closeBtn">
+                                <div class="closeBtn" data-id='${parsetoDoList[y].id}'>
                                     <span>x</span>
                                 </div>
                             </div>
                     `)
             } else {
-                // idDone.style.display = 'none';
                 console.log('false');
 
             }
@@ -217,5 +220,5 @@ function displayisDoneList() {
 
 displayTitleTaskList();
 displayTaskList();
-addTaskListEventListener();
 displayisDoneList();
+addTaskListEventListener();

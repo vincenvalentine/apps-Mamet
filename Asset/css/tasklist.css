@@ -115,6 +115,7 @@
   text-decoration: line-through;
 }
 .doneList .doneListContent .contentDoneList .closeBtn {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: stretch;
