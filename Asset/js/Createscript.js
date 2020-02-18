@@ -34,7 +34,7 @@ function btnClick() {
     // get array toDoList
     let arrayTodoList = window.localStorage.getItem('toDoList');
 
-    if (arrayTodoList == null || arrayTodoList == undefined) {
+    if (arrayTodoList == null || arrayTodoList == undefined || arrayTodoList == "[]") {
         // penampung
         let newArrayTodoList = [];
 

@@ -44,6 +44,7 @@ function displayTitleTaskList() {
 }
 
 
+
 function displayTaskList() {
     // get data di localstorage
     let arraytoDoList = window.localStorage.getItem('toDoList');
@@ -56,8 +57,19 @@ function displayTaskList() {
     let containeBoxLists = document.getElementsByClassName('boxList');
 
 
-    console.log(parsetoDoList);
-    console.log(parseCategoryList);
+    let containerNoData = document.querySelector('.container-no-data');
+    let containerTodoList = document.querySelector('.container-todolist');
+    
+    // Check todolist
+    if (parsetoDoList.length == 0) {
+        // Show nodata
+        containerNoData.style.display = 'block';
+        containerTodoList.style.display = 'none';
+    } else {
+        // Hide nodata
+        containerNoData.style.display = 'none';
+        containerTodoList.style.display = 'block';
+    }
 
     let idTask = document.getElementById('container-Box');
     // let containeBoxLists = document.getElementsByClassName('boxList');
@@ -82,7 +94,6 @@ function displayTaskList() {
             } else {
         
               }
-              
             }
         }
     
@@ -90,10 +101,7 @@ function displayTaskList() {
 
     let join = elemetTaskList.join('');
     idTask.innerHTML = join;
-
-    // console.log(join);
 }
-
 
 function addTaskListEventListener() {
     let arraytoDoList = window.localStorage.getItem('toDoList');
@@ -101,11 +109,6 @@ function addTaskListEventListener() {
 
     let containeBoxLists = document.getElementsByClassName('boxList');
     let closeButtons = document.getElementsByClassName('closeBtn');
-
-    let containerIsDoneLists = document.getElementsByClassName('contentDoneList');
-    let closeButtonsIsDone = document.getElementsByClassName('closeButtonsIsDone');
-
-    console.log(closeButtons.length);
     
     for (let i = 0; i < containeBoxLists.length; i++) {
         containeBoxLists[i].addEventListener('click', function () {
@@ -114,69 +117,39 @@ function addTaskListEventListener() {
                 if (idbox == parsetoDoList[y].id) {
                     parsetoDoList[y].isDone = true;
                     window.localStorage.setItem('toDoList', JSON.stringify(parsetoDoList));
-                    containeBoxLists[i].remove();
-                    // window.location.reload();
-                } else {
-                    console.log('false');
                 }
             }
-            // console.log(parsetoDoList);
 
+            displayTaskList();
             displayisDoneList();
-
+            addTaskListEventListener();
         })
-
     }
 
-    console.log(closeButtons);
-    
-
+    // button Not done
     for (let j = 0; j < closeButtons.length; j++) {
         closeButtons[j].addEventListener('click', function (e) {
+            e.stopPropagation();
             console.log(this.dataset.id);
             let ID = this.dataset.id;
             for(let k = 0; k < parsetoDoList.length; k++){
                 if (ID == parsetoDoList[k].id) {
                     parsetoDoList.splice(k,1);  
                     window.localStorage.setItem('toDoList', JSON.stringify(parsetoDoList));   
-                    displayTaskList();
+                    displayTaskList()
                 } else {
                     
                 }
 
             }
-            e.stopPropagation();
+            displayTaskList();
+            displayisDoneList();
+            addTaskListEventListener();
         })
     }
-    
-
-    for (let c = 0; c < containerIsDoneLists.length; c++) {
-        console.log(c);
-        
-        containerIsDoneLists[c].addEventListener('click', function (e) {
-            console.log(e.target);
-            let ID = this.dataset.id;
-            for(let k = 0; k < parsetoDoList.length; k++){
-                if (ID == parsetoDoList[k].id) {
-                    parsetoDoList.splice(k,1);  
-                    window.localStorage.setItem('toDoList', JSON.stringify(parsetoDoList));   
-                    displayTaskList();           
-                } else {
-                    
-                }
-
-            }
-            e.stopPropagation();
-        })
-    }
-
 }
 
-
-
-
 function displayisDoneList() {
-    console.log('jalan');
     // get data di localstorage
     let arraytoDoList = window.localStorage.getItem('toDoList');
     let arrayCategoryList = window.localStorage.getItem('categoryList');
@@ -188,7 +161,7 @@ function displayisDoneList() {
     let idDone = document.getElementById('idDoneList');
     let elementDoneList = [];
 
-    console.log(idDone);
+    // console.log(idDone);
 
 
     for (let y = 0; y < parsetoDoList.length; y++) {
@@ -206,7 +179,7 @@ function displayisDoneList() {
                             </div>
                     `)
             } else {
-                console.log('false');
+                // console.log('false');
 
             }
         }
@@ -214,11 +187,25 @@ function displayisDoneList() {
 
     let join = elementDoneList.join('');
     idDone.innerHTML = join;
-
-    // console.log(join);
 }
+
+function displayZeroTask() {
+    let zeroImg = document.getElementsByClassName('container-zeroList');
+    let containerBoxLists = document.getElementsByClassName('boxList');
+
+    let zeroTaskImg = '';
+    if (containerBoxLists.length == 0){
+       zeroTaskImg += '<img src="/Asset/images/document.svg" alt="" srcset="">';
+       console.log('here');
+    }
+
+    zeroImg.innerHTML = zeroTaskImg;    
+}
+
+
 
 displayTitleTaskList();
 displayTaskList();
 displayisDoneList();
 addTaskListEventListener();
+displayZeroTask();

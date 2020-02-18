@@ -38,6 +38,24 @@ $color_ungu : #723f96;
         }
     }
 }
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.container-no-data {
+    padding: 1.5rem;
+    text-align: center;
+    display: none;
+
+    img {
+            max-width: 5rem;
+    }
+}
     
     .container-boxList{
         .boxList{
